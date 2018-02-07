@@ -1,1 +1,1 @@
-# prereqs : visual studio code, npm, tsc, 
+# prereqs : visual studio code, npm, tsc 

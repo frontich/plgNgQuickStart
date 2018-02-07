@@ -18,7 +18,10 @@
   <script src="node_modules/reflect-metadata/Reflect.js"></script>
   <script src="node_modules/systemjs/dist/system.src.js"></script>
 
+  <!-- Use systemjs to load the packages, load files as you need them -->
   <script src="systemjs.config.js"></script>
+
+  <!-- import from app folder, by default look for the main.ts file -->
   <script>
       System.import('app').catch(function (err) { console.error(err); });
   </script>

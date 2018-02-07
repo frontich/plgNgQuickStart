@@ -3,7 +3,7 @@
 
 <head>
   <base href="/">
-  <title>Code with Us</title>
+  <title>Angular quick start</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="app-styles.css">
@@ -20,10 +20,7 @@
 
   <script src="systemjs.config.js"></script>
   <script>
-    // For harness: 'app'
-    // For stand-alone example, pick one like this: 'app/section-01/main'
-    // System.import('app/section-13/main').catch(function (err) { console.error(err); });
-    System.import('app').catch(function (err) { console.error(err); });
+      System.import('app').catch(function (err) { console.error(err); });
   </script>
 </head>
 
@@ -34,12 +31,6 @@
       <h3>
         <span>Angular QuickStart</span>
       </h3>
-      <span flex=""></span>
-      <!--<div class="md-title-links hide-xs">
-        <md-button class="md-accent md-hue-1 md-title-button" href="http://github.com/johnpapa/angular2-first-look" target="_blank">Github</md-button>
-        <md-button class="md-accent md-hue-1 md-title-button" href="http://angular.io" target="_blank">Angular</md-button>
-        <md-button class="md-accent md-hue-1 md-title-button" href="http://johnpapa.net" target="_blank">John Papa</md-button>
-      </div>-->
     </div>
   </md-toolbar>
   <my-app>Loading AppComponent content here ...</my-app>

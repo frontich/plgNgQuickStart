@@ -2,41 +2,41 @@
 <html>
 
 <head>
-  <base href="/">
-  <title>Angular quick start</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="app-styles.css">
+	<base href="/">
+	<title>Angular quick start</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="app-styles.css">
 
-  <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
-  <link rel="stylesheet" href="angular-material.min.css" />
+	<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+	<link rel="stylesheet" href="angular-material.min.css" />
 
-  <!-- Polyfill(s) for older browsers -->
-  <script src="node_modules/core-js/client/shim.min.js"></script>
+	<!-- Polyfill(s) for older browsers -->
+	<script src="node_modules/core-js/client/shim.min.js"></script>
 
-  <script src="node_modules/zone.js/dist/zone.js"></script>
-  <script src="node_modules/reflect-metadata/Reflect.js"></script>
-  <script src="node_modules/systemjs/dist/system.src.js"></script>
+	<script src="node_modules/zone.js/dist/zone.js"></script>
+	<script src="node_modules/reflect-metadata/Reflect.js"></script>
+	<script src="node_modules/systemjs/dist/system.src.js"></script>
 
-  <!-- Use systemjs to load the packages, load files as you need them -->
-  <script src="systemjs.config.js"></script>
+	<!-- Use systemjs to load the packages, load files as you need them -->
+	<script src="systemjs.config.js"></script>
 
-  <!-- import from app folder, by default look for the main.ts file -->
-  <script>
+	<!-- import from app folder, by default look for the main.ts file -->
+	<script>
       System.import('app').catch(function (err) { console.error(err); });
   </script>
 </head>
 
 <body>
-  <md-toolbar class="dark">
-    <div class="md-toolbar-tools">
-      <a class="md-title-icon" ng-href="http://justsomesite.com" target="_blank"><i></i></a>
-      <h3>
-        <span>Angular QuickStart</span>
-      </h3>
-    </div>
-  </md-toolbar>
-  <my-app>Loading AppComponent content here ...</my-app>
+	<md-toolbar class="dark">
+		<div class="md-toolbar-tools">
+			<a class="md-title-icon" ng-href="http://justsomesite.com" target="_blank"><i>This is THE link</i></a>
+			<h3>
+				<span>Angular Quick Start</span>
+			</h3>
+		</div>
+	</md-toolbar>
+	<my-app>Loading AppComponent content here ...</my-app>
 </body>
 
 </html>

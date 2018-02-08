@@ -55,8 +55,9 @@ export class AppComponent {
 /**
  * #selector && selector.value 
  * $event.target.value
+ * [ngModel]="name" (ngModelChange)="name=$event" IS PREFERABLE OVER [(ngModel)]="name" BUT ITS THE SAMEOLD
  */
 
 /**
- *  input and keyup and keyup.enter event for <input> element
+ *  input,keyup,keyup.enter, blur  events for <input> element
  */

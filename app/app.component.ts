@@ -1,17 +1,13 @@
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'my-app', // to use me, put <my-app> in index.html
   template: `
   <h1>{{name}}</h1>
   <p><i>{{name}} lives in {{region}} region.</i></p>
   <br/>
-
-  <input [value]="name" (input)="name=$event.target.value"><br/>
-  <input [value]="name" (keyup)="name=$event.target.value"><br/>
-  <input [value]="name" (keyup.enter)="name=$event.target.value"><br/>
-  <input [value]="name" (keyup.enter)="name=$event.target.value"
-                        (blur)="name=$event.target.value"><br/>
+  <input [(ngModel)]="name">
   <br/>
 
   <button (click)="addressClick()">Show/Hide address</button>

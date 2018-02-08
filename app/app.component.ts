@@ -7,10 +7,13 @@ import { Component } from '@angular/core';
   <h1>{{name}}</h1>
   <p><i>{{name}} lives in {{region}} region.</i></p>
   <br/>
-  <input [(ngModel)]="name">
-  <br/>
+  <fieldset>
+    <input [(ngModel)]="name">
+    <input [ngModel]="name" (ngModelChange)="name=$event">
+    <br/>
+  </fieldset>  
 
-  <button (click)="addressClick()">Show/Hide address</button>
+  <label><input type="checkbox" [(ngModel)]="hideAddress">Hide address</label>
 
   <div [hidden]="hideAddress">
     <fieldset>
@@ -40,10 +43,6 @@ export class AppComponent {
 
   regionChange(region:string){
     this.region = region;
-  }
-
-  addressClick() {
-    this.hideAddress = !this.hideAddress;
   }
 }
 

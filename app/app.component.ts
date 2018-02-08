@@ -25,22 +25,10 @@ import { Component } from '@angular/core';
       </select>
     </fieldset>
   </div>
-  <fieldset>
-    <img [src]="image">
-  </fieldset>
-  <label [style.color]="color">Favorite color: </label>
-  <button (click)="clicked()">Toggle color</button>
-  <select (change)="colorChange($event.target.value)">
-    <option>red</option>
-    <option>grey</option>
-    <option>orange</option>
-  </select>
   `
 })
 export class AppComponent {
   name = 'Janez Novak';
-  image = 'favicon.ico';
-  color = 'green';
   street = 'Ulica bratov Tatov, Stevilka 666';
   city = 'Any town';
   region = 'West'
@@ -53,17 +41,10 @@ export class AppComponent {
   addressClick() {
     this.hideAddress = !this.hideAddress;
   }
-  clicked() {
-    this.color = this.color === "green" ? "blue" : "green";
-  }
-
-  colorChange(color: string) {
-    this.color = color;
-  }
 }
 
 /** 
- * interpolation      == <img src={{image}}
+ *  interpolation      == <img src={{image}}
  *  property binding   == <img [src]="image"
  * 
  */

@@ -10,6 +10,8 @@ import { Component } from '@angular/core';
   <input [value]="name" (input)="name=$event.target.value"><br/>
   <input [value]="name" (keyup)="name=$event.target.value"><br/>
   <input [value]="name" (keyup.enter)="name=$event.target.value"><br/>
+  <input [value]="name" (keyup.enter)="name=$event.target.value"
+                        (blur)="name=$event.target.value"><br/>
   <br/>
 
   <button (click)="addressClick()">Show/Hide address</button>

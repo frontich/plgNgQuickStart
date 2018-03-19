@@ -1,7 +1,7 @@
 {
-  "name": "code-with-us-in-ng-2",
+  "name": "angular-quick-start",
   "version": "1.0.0",
-  "description": "Pluralsight - Code with John Papa & Ward Bell in Angular 2",
+  "description": "02 PS CODE WITH US : ANGULAR QUICK START",
   "scripts": {
     "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
     "e2e": "tsc && concurrently \"http-server -s\" \"protractor protractor.config.js\" --kill-others --success first",

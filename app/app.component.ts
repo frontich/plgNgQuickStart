@@ -4,8 +4,8 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'my-app', // to use me, put <my-app> in index.html
   template: `
-  <h1>{{name}}</h1>
-  <p><i>{{name}} lives in {{region}} region.</i></p>
+  <h1>{{ name }}</h1>
+  <p><i>{{ name }} lives in {{ region }} region.</i></p>
   <br/>
   <fieldset>
     <input [(ngModel)]="name">

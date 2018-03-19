@@ -5,26 +5,25 @@ import { Component } from '@angular/core';
   selector: 'my-app', // to use me, put <my-app> in index.html
   template: `
   <h1>{{ name }}</h1>
-  <p><i>{{ name }} lives in {{ region }} region.</i></p>
+  <p><i>{{ name }} is at {{ street }} in {{ city }} in the {{ region }} region.</i></p>
   <br/>
   <fieldset>
     <input [(ngModel)]="name">
-    <input [ngModel]="name" (ngModelChange)="name=$event">
     <br/>
   </fieldset>  
 
   <label><input type="checkbox" [(ngModel)]="hideAddress">Hide address</label>
 
   <div [hidden]="hideAddress">
-    <fieldset>
-      <label>Street: </label>{{street}}
-    </fieldset>
-    <fieldset>
-      <label>City: </label>{{city}}
-    </fieldset>
+  <fieldset>
+    <label>Street: <input [(ngModel)]="street"> </label>
+  </fieldset>
+  <fieldset>
+    <label>City: <input [(ngModel)]="city"> </label>
+  </fieldset>
     <fieldset>
       <label>Region: </label> 
-      <select (change)="regionChange($event.target.value)">
+       <select [(ngModel)]="region">
         <option>East</option>
         <option>North</option>
         <option>South</option>
@@ -41,9 +40,6 @@ export class AppComponent {
   region = 'West'
   hideAddress = false;
 
-  regionChange(region:string){
-    this.region = region;
-  }
 }
 
 /** 

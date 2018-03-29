@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { CustomerListComponent } from './customer-list.component';
 import { CustomerDetailComponent } from './customer-detail.component';
+import { AddressComponent } from './address.component';
 
 // This decorator describes the class that follows it
 // @NgModule is a function, it is also decorator
@@ -12,7 +13,8 @@ import { CustomerDetailComponent } from './customer-detail.component';
   imports: [BrowserModule, FormsModule], // What stuff do I need?
   declarations: [AppComponent,
     CustomerListComponent,
-    CustomerDetailComponent
+    CustomerDetailComponent,
+    AddressComponent
   ],  // What's in my app module?
   bootstrap: [AppComponent]   // Where do I start?
 })

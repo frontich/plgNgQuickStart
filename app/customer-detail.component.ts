@@ -11,8 +11,7 @@ import { Customer } from './model';
 })
 export class CustomerDetailComponent {
 
-  regions = ['vzhod', 'zahod', 'sever', 'jug', 'severozahod'];
-  states = ['Slovenija', 'Slovaška', 'Sibirija'];
+
 
   @Input() customer: Customer;
   hideAddress = false;

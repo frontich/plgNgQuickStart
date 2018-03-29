@@ -12,6 +12,7 @@ import { Customer } from './model';
 export class AppComponent {
 
   regions = ['vzhod', 'zahod', 'sever', 'jug', 'severozahod'];
+  states = ['Slovenija', 'Slovaška','Sibirija'];
 
   customers: Customer[] = [
     {
@@ -21,7 +22,7 @@ export class AppComponent {
         street: 'Unknown street 666',
         city: 'Lost City',
         region: 'severozahod',
-        state: 'Gorenjska'
+        state: 'Slovenija'
       }
     },
     {
@@ -31,12 +32,22 @@ export class AppComponent {
         street: 'Unknown street 001',
         city: 'Found City',
         region: 'vzhod',
-        state: 'Primorska'
+        state: 'Slovaška'
+      }
+    },
+    {
+      id: 2,
+      name: 'Zdrava Marija',
+      address: {
+        street: 'Forbidden street 001',
+        city: 'Blue City',
+        region: 'sever',
+        state: 'Sibirija'
       }
     }
   ];
 
-  customer: Customer = this.customers[1];
+  customer: Customer;
   hideAddress = false;
 }
 

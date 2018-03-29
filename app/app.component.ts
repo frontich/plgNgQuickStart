@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
 
-import { Customer} from './model';
+import { Customer } from './model';
 
 
 @Component({
   selector: 'my-app', // to use me, put <my-app> in index.html
   template: `
-  <h1>{{ name }}</h1>
-  <p><i>{{ name }} is at {{ street }} in {{ city }} in the {{ region }} region.</i></p>
+  <h1>{{ customer.name }}</h1>
+  <p><i>{{ customer.name }} is at {{ customer.address.street }} in {{ customer.address.city }} in the {{ customer.address.region }} region.</i></p>
   <br/>
   <fieldset>
-    <input [(ngModel)]="name">
+    <input [(ngModel)]="customer.name">
     <br/>
   </fieldset>  
 
@@ -18,26 +18,45 @@ import { Customer} from './model';
 
   <div [hidden]="hideAddress">
   <fieldset>
-    <label>Street: <input [(ngModel)]="street"> </label>
+    <label>Street: <input [(ngModel)]="customer.address.street"> </label>
   </fieldset>
   <fieldset>
-    <label>City: <input [(ngModel)]="city"> </label>
+    <label>City: <input [(ngModel)]="customer.address.city"> </label>
   </fieldset>
     <fieldset>
-      <label>Region: </label> 
-       <select [(ngModel)]="region">
-        <option>East</option>
-        <option>North</option>
-        <option>South</option>
-        <option>West</option>
+      <label>State: </label> 
+       <select [(ngModel)]="customer.address.state">
+        <option>Gorenjska</option>
+        <option>Osrednjeslovenska</option>
+        <option>Primorska</option>
+        <option>Prekmurska</option>
       </select>
     </fieldset>
+    <fieldset>
+    <label>Region: </label> 
+     <select [(ngModel)]="customer.address.region">
+      <option>East</option>
+      <option>North</option>
+      <option>South</option>
+      <option>West</option>
+    </select>
+  </fieldset>
   </div>
   `
 })
 export class AppComponent {
-  
+
   hideAddress = false;
+  customer: Customer = {
+    id: 1,
+    name: 'Janez Novak',
+    address: {
+      street: 'Unknown street 666',
+      city: 'Lost City',
+      region: 'East',
+      state: 'Over there'
+    }
+  }
 
 }
 

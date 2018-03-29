@@ -37,7 +37,7 @@ export class AppComponent {
   name = 'Janez Novak';
   street = 'Ulica bratov Tatov, Stevilka 666';
   city = 'Any town';
-  region = 'West'
+  region = 'West';
   hideAddress = false;
 
 }

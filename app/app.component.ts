@@ -54,7 +54,7 @@ export class AppComponent {
       street: 'Unknown street 666',
       city: 'Lost City',
       region: 'East',
-      state: 'Over there'
+      state: 'Gorenjska'
     }
   }
 

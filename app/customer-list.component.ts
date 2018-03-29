@@ -5,14 +5,11 @@ import { Customer } from './model';
 
 @Component({
   moduleId: module.id,
-  selector: 'my-app', // to use me, put <my-app> in index.html
-  templateUrl: 'app.component.html',
-  styleUrls: ['app.component.css']
+  selector: 'customer-list', // to use me, put <my-app> in index.html
+  templateUrl: 'customer-list.component.html',
+  styleUrls: ['customer-list.component.css']
 })
-export class AppComponent {
-
-  regions = ['vzhod', 'zahod', 'sever', 'jug', 'severozahod'];
-  states = ['Slovenija', 'Slovaška','Sibirija'];
+export class CustomerListComponent {
 
   customers: Customer[] = [
     {
@@ -48,7 +45,6 @@ export class AppComponent {
   ];
 
   customer: Customer;
-  hideAddress = false;
 }
 
 /** 

@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { CustomerListComponent } from './customer-list.component';
 import { CustomerDetailComponent } from './customer-detail.component';
 import { AddressComponent } from './address.component';
+import { DataService } from './data.service';
 
 // This decorator describes the class that follows it
 // @NgModule is a function, it is also decorator
@@ -15,7 +16,8 @@ import { AddressComponent } from './address.component';
     CustomerListComponent,
     CustomerDetailComponent,
     AddressComponent
-  ],  // What's in my app module?
+  ],
+  providers : [DataService], // What's in my app module?
   bootstrap: [AppComponent]   // Where do I start?
 })
 /** metadata is attached to AppModule */

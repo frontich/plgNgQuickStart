@@ -5,7 +5,7 @@ import { Address } from './model';
 @Component({
     moduleId: module.id,
     selector: 'address-comp',
-    templateUrl: './address.component.html' 
+    templateUrl: './address.component.html'
 })
 export class AddressComponent {
     @Input() address = Address;

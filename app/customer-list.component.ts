@@ -15,6 +15,7 @@ export class CustomerListComponent implements OnInit {
 
   customers: Customer[];
   customer: Customer;
+  isBusy: boolean = false;
 
   constructor(private dataService: DataService, private loggerService: LoggerService) {
 
@@ -26,8 +27,11 @@ export class CustomerListComponent implements OnInit {
 
   getCustomers() {
     //this.customers = this.dataService.getCustomers();
+    this.isBusy = true;
     this.loggerService.log('Getting the customers...');
-    this.dataService.getCustomers().then(custs => {
+    //this.dataService.getCustomersAsPromise().then(custs => {
+    this.dataService.getCustomersAsObservable().subscribe(custs => {
+      this.isBusy = false;
       this.customers = custs;
     })
   }

@@ -11,7 +11,7 @@ import { LoggerService } from './logger.service';
   templateUrl: 'customer-list.component.html',
   styleUrls: ['customer-list.component.css']
 })
-export class CustomerListComponent implements OnInit{
+export class CustomerListComponent implements OnInit {
 
   customers: Customer[];
   customer: Customer;
@@ -20,9 +20,16 @@ export class CustomerListComponent implements OnInit{
 
   }
 
-  ngOnInit(){
-    this.customers = this.dataService.getCustomers();
+  ngOnInit() {
+    this.getCustomers();
+  }
+
+  getCustomers() {
+    //this.customers = this.dataService.getCustomers();
     this.loggerService.log('Getting the customers...');
+    this.dataService.getCustomers().then(custs => {
+      this.customers = custs;
+    })
   }
 
   shift(increment: number) {

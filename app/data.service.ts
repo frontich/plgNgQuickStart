@@ -1,22 +1,22 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers } from '@angular/http';
+import { Http } from '@angular/http';
 
-import { createTestCustomers } from './test-data';
 import { LoggerService } from './logger.service';
 import { Customer } from './model';
 import { Observable } from 'rxjs/Observable';
-import { of } from 'rxjs/observable/of';
+// import { of } from 'rxjs/observable/of';
 import 'rxjs/add/operator/delay';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/throw';
 
 
 @Injectable()
 export class DataService {
     private customersUrl = 'api/customers';
     private statesUrl = 'api/states';
-    
 
     constructor(
         private loggerService: LoggerService,
@@ -76,6 +76,9 @@ export class DataService {
             .map(response => response.json().data as string[])
             .do((st) => {
                 this.loggerService.log(`Got ${st.length} states`);
+            }).catch((error: any) => {
+                this.loggerService.log(`An error occured ${error}`);
+                return Observable.throw('Something bad happened in getting states, please check the console');
             });
     }
 }

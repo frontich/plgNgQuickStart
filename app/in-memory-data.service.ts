@@ -4,7 +4,9 @@ import { createTestCustomers } from './test-data';
 
 export class InMemoryDataService implements InMemoryDbService {
     createDb() {
-        return { customers: createTestCustomers() };
+        const states = ['Slovenija', 'Slovaška', 'Sibirija'];
+
+        return { customers: createTestCustomers(), states };
 
     }
 }

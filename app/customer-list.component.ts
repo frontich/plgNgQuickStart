@@ -33,6 +33,9 @@ export class CustomerListComponent implements OnInit {
     this.dataService.getCustomersAsObservable().subscribe(custs => {
       this.isBusy = false;
       this.customers = custs;
+    }, (errorMsg: string) => {
+      this.isBusy = false;
+      // something bad happend;
     })
   }
 

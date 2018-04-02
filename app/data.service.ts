@@ -9,16 +9,20 @@ import { of } from 'rxjs/observable/of';
 import 'rxjs/add/operator/delay';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/operator/map';
 
 
 @Injectable()
 export class DataService {
     private customersUrl = 'api/customers';
+    private statesUrl = 'api/states';
+    
 
     constructor(
         private loggerService: LoggerService,
         private http: Http
     ) { }
+
 
     getCustomersAsPromise(): Promise<Customer[]> {
 
@@ -48,13 +52,30 @@ export class DataService {
     }
 
     getCustomersAsObservable(): Observable<Customer[]> {
-        this.loggerService.log('Getting customers as an Observable ...');
+        this.loggerService.log('Getting customers as an Observable via HTTP...');
+
+        return this.http.get(this.customersUrl)
+            .map(response => response.json().data as Customer[])
+            .do((custs) => {
+                this.loggerService.log(`Got ${custs.length} customers`);
+            });
+        /*this.loggerService.log('Getting customers as an Observable ...');
         const customers = createTestCustomers();
         return of(customers)
             .delay(1500)
             .do(() => {
                 this.loggerService.log(`Got ${customers.length} customers`);
-            });
+            });*/
 
+    }
+
+    getStates(): Observable<string[]> {
+        this.loggerService.log('Getting states as an Observable via HTTP...');
+
+        return this.http.get(this.statesUrl)
+            .map(response => response.json().data as string[])
+            .do((st) => {
+                this.loggerService.log(`Got ${st.length} states`);
+            });
     }
 }
